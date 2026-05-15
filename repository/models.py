@@ -216,10 +216,12 @@ class MealPlanModel(Base):
     
     def dict(self):
         return {
-            'id': self.id,
-            'name': self.name,
-            'email': self.email,            
-            'role': self.role,
+            'mealplan_id': self.mealplan_id,
+            'title': self.title,
+            'start_date': self.start_date,            
+            'end_date': self.end_date,
+            'restrictions': self.restrictions,
+            'notes': self.notes,
             'created': self.created          
              
         }        

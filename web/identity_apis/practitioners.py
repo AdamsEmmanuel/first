@@ -24,8 +24,8 @@ router = APIRouter(prefix="/practitioners", tags=["Practitioners"])
 def get_practitioners(created: Optional[datetime] = None, limit: Optional[int] = None):
     with UnitOfWork() as unit_of_work:
         repo = PractitionersRepository(unit_of_work.session)
-        diary_service = PractitionersService(repo)
-        results = diary_service.list_practitioners(limit=limit, created=created)      
+        practitioner_service = PractitionersService(repo)
+        results = practitioner_service.list_practitioners(limit=limit, created=created)      
 
     return { "practitioners": [result.dict() for result in results]}
 

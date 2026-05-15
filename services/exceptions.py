@@ -1,4 +1,9 @@
-
+class FoodItemNotFoundError(Exception):
+    pass
+class MealPlanDataNotFoundError(Exception):
+    pass
+class MealPlanNotFoundError(Exception):
+    pass
 class ServiceNotFoundError(Exception):
     pass
 class TherapySessionNotFoundError(Exception):

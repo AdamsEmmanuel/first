@@ -75,7 +75,7 @@ def schedule_sessions(amount, interval_days, duration_dict, break_dict, repo, wo
 # --- API Configuration & Mock Data ---
 
 schedules_repo = [] # This would usually be your database
-WORK_DAYS = [1, 2, 3, 4, 5, 6] # Mon - Sat
+WORK_DAYS = [1, 2, 3, 4, 5] # Mon - Sat
 WORK_HOURS = range(6, 17)      # 06:00 to 17:00 (5 PM)
 
 session_params = {

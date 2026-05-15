@@ -56,19 +56,17 @@ class ServicesRepository:
             return Service(**service.dict())
        
         
-    
-    def list(self):
-        def list(self, limit=None, **filters):
-            query= self.session.query(ServiceModel)
-            if 'created' in filters:
-                created = filters.pop('created')
-                if created:
-                    query = query.filter(ServiceModel.created == created)
-                else:
-                    query = query.filter(ServiceModel.status != created)
-                records = query.filter_by(**filters).limit(limit).all()
-                return [Service(**record.dict()) for record in records]        
-    
+    def list(self, limit=None, **filters):
+        query= self.session.query(ServiceModel)
+        if 'created' in filters:
+            created = filters.pop('created')
+            if created:
+                query = query.filter(ServiceModel.created == created)
+            else:
+                query = query.filter(ServiceModel.created != created)
+            records = query.filter_by(**filters).limit(limit).all()
+            return [Service(**record.dict()) for record in records]        
+
     def update(self, id_, **payload):
         record = self._get(id_)
         if name in payload:

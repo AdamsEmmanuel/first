@@ -35,6 +35,9 @@ class ServicesService:
         if service is None:
             raise ServiceNotFoundError(f'Service with id {service_id} not found')
         return self.service_repository.delete(service_id)
+    
+    
+    
     def get_available_specialists(self, service_id):
         available_specialists = self.service_repository.get_available_specialists(service_id)
         if available_specialists is not None :
@@ -55,7 +58,7 @@ class TherapySessionsService:
     def create_session(self, details):
         return self.session_repository.add(details)
     
-    def get_sesion(self, session_id):
+    def get_session(self, session_id):
         session = self.session_repository.get(session_id)
         if session is not None :
             return session

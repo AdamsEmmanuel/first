@@ -1,0 +1,51 @@
+Build a production-ready frontend MVP application.
+
+Tech Stack:
+- React + TypeScript
+- Vite
+- TailwindCSS
+- shadcn/ui
+- Zustand for state management
+- TanStack Query for server state
+- React Hook Form + Zod for forms and validation
+
+Requirements:
+- scalable architecture
+- feature-based folder structure
+- reusable components
+- responsive mobile-first design
+- centralized API layer
+- environment variable support
+- loading and error states
+- protected routes
+- JWT authentication flow
+- proper form validation
+- accessibility support
+- lazy loading
+- route-based code splitting
+- deployment-ready configuration
+- clean maintainable code
+- separation of concerns
+
+Backend Assumptions:
+- FastAPI backend
+- JWT auth
+- REST APIs
+- paginated endpoints
+- proper HTTP status handling
+
+Deployment Targets:
+- Vercel frontend
+- Docker support
+
+Important:
+- Do not place all logic in App.tsx
+- Separate UI, business logic, and API logic
+- Use reusable components
+- Avoid duplicated code
+- Never hardcode localhost URLs
+- Use environment variables
+- Include loading, empty, and error states
+- Add retry handling for failed requests
+- Include accessibility improvements
+- Add comments explaining architecture decisions
