@@ -5,6 +5,15 @@ from web.identity_apis import (
     patients,
     practitioners
 )
+from web.nutrition_apis import(
+    meal_plan,
+    food_items
+)
+
+from web.core_apis import (
+    therapy_sessions,
+    services
+)
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -24,6 +33,10 @@ app.add_middleware(
 app.include_router(users.router, prefix="/api/v1")
 app.include_router(patients.router, prefix="/api/v1")
 app.include_router(practitioners.router, prefix="/api/v1")
+app.include_router(meal_plan.router, prefix="/api/v1")
+app.include_router(food_items.router, prefix="/api/v1")
+app.include_router(therapy_sessions.router, prefix="/api/v1")
+app.include_router(services.router, prefix="/api/v1")
 
 
     

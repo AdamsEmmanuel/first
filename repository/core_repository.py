@@ -120,7 +120,7 @@ class TherapySessionsRepository:
             duration=details['duration'], 
             status=details['status'], 
             clinical_notes=details['clinical'], 
-            session_datetime=details['session_datetime'],             
+                    
         )
         
         self.session.add(record)
