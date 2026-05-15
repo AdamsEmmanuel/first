@@ -4,7 +4,6 @@ from typing import Optional
 
 
 from starlette.responses import Response
-import json
 from starlette import status
 from fastapi import APIRouter, HTTPException , Request
 
@@ -61,7 +60,7 @@ def get_service(service_id: UUID):
         ) 
                      
 @router.get("/{service_id}/available_specialists" ,response_model=GetServiceSchema)
-def get_service(service_id: UUID):
+def get_service_available_specialists(service_id: UUID):
     try:
         with UnitOfWork() as unit_of_work:
             repo = ServicesRepository(unit_of_work.session)
@@ -74,7 +73,7 @@ def get_service(service_id: UUID):
         )              
 
 @router.post("/{service_id}/enroll" ,response_model=GetServiceSchema)
-def get_service(service_id: UUID):
+def enroll_service(service_id: UUID):
     try:
         with UnitOfWork() as unit_of_work:
             repo = ServicesRepository(unit_of_work.session)

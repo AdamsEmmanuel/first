@@ -77,7 +77,7 @@ class MealPlansService:
             return  mealplan
         raise MealPlanNotFoundError(f'Mealplan with id {mealplan_id}')
     
-    def list_mealplan(self, **filters):
+    def list_mealplans(self, **filters):
         limit = filters.pop('limit', None)
         return self.mealplan_repository.list(limit, **filters)
     
